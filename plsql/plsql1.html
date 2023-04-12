@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WEB | DEVERSE</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.12.1/css/all.css"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/css_for_dnms_tutorial3.css" />
+  </head>
+  <body>
+    <div class="banner">
+      <div class="navbar">
+        <div class="logo"></div>
+        <nav>
+          <ul>
+            <li><a href="../website/second.html">HOME</a></li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Learn"
+                target="_blank"
+                >TUTORIALS</a
+              >
+              <div class="submenu">
+                <ul>
+                  <li><a href="#">HTML</a></li>
+                  <li><a href="#">CSS</a></li>
+                  <li><a href="#">JAVASCRIPT</a></li>
+                  <li><a href="../dbmstutorial/whatisdbms.html">DBMS</a></li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a
+                href="https://www.youtube.com/results?search_query=web+development+full+course"
+                target="_blank"
+                >VIDEOS</a
+              >
+            </li>
+            <li>
+              <a href="">PROGRAMS</a>
+              <div class="submenu">
+                <ul>
+                  <li><a href="../website/programs_of_html.html">HTML</a></li>
+                  <li><a href="../website/programs_of_css.html">CSS</a></li>
+                  <li><a href="../website/output_of_js.html">JAVASCRIPT</a></li>
+                  <li><a href="../website/output_of_js.html">DBMS</a></li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a href="https://www.facebook.com" target="_blank">CONTACT US</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="whole_content">
+      <div class="topics">
+        <ul>
+          <li>
+            <p class="topic">
+              <a href="../dbmstutorial/whatisdbms.html" class="for_content"
+                >What is DBMS?</a
+              >
+            </p>
+          </li>
+          <li>
+            <p class="topic">
+              <a
+                href="../dbmstutorial/dbmsarchitecture.html"
+                class="for_content"
+                
+                >DBMS Architecture</a
+              >
+            </p>
+          </li>
+          <li>
+            <p class="topic">
+              <a href="../dbmstutorial/whatisdbms.html" class="for_content"
+                >Schema and Instaces in DBMS</a
+              >
+            </p>
+          </li>
+          <li>
+            <p class="topic">
+              <a href="../dbmstutorial/whatisdbms.html" class="for_content"
+                >File System V/S DBMS</a
+              >
+            </p>
+          </li>
+          <li>
+            <p class="topic">
+              <a href="../dbmstutorial/whatisdbms.html" class="for_content"
+                >DBMS Advantages</a
+              >
+            </p>
+          </li>
+          <li>
+            <p class="topic">
+              <a href="../dbmstutorial/whatisdbms.html" class="for_content"
+                >DBMS Disadvantages</a
+              >
+            </p>
+          </li>
+          <li>
+            <p class="topic">
+              <a href="../dbms_queries/ddl_commands.html" class="for_content">Various Languages in DBMS
+                  </a
+              >
+              
+            </p>
+          </li>
+          <li>
+            <p class="topic">
+              <a href="../mysql/mysql1.html" class="for_content">MYSQL
+            </a >
+              
+            </p>
+            <ul style="list-style:decimal;">
+                <li><b><a href="#mysqlintroduction">MYSQL INTRODUCTION</a></b></li>
+                <li><b><a href="#mysqlcreatecomman">MySQL Create Command</a></b></li>
+                <li><b><a href="#mysqlselectcomman">MySQL Select Command</a></b></li>
+                <li><b><a href="#mysqlconstraints">MySQL Constraints</a></b></li>
+                <li><b><a href="#mysqlwhereclause">MySQL Where Clause</a></b></li>
+                <li><b><a href="#mysqldistinct">MySQL Distinct Clause</a></b></li>
+            </ul>
+          </li>
+          <li>
+            <p class="topic">
+              <a href="../dbmstutorial/whatisdbms.html" class="for_content" style="color: orange; border-bottom: 2px solid orange">PL/SQL
+                  </a
+              >
+              
+            </p>
+          </li>
+        </ul>
+        
+      </div>
+      <div class="content">
+        <h1>PL/SQL</h1>
+        <BR></BR>
+        <p class="define_content">
+           <span>PL/SQL</span> is a block structured language. The programs of PL/SQL are logical blocks that can contain any number of nested sub-blocks. Pl/SQL stands for "Procedural Language extension of SQL" that is used in Oracle. PL/SQL is integrated with Oracle database (since version 7).
+<BR>
+PL/SQL includes procedural language elements like conditions and loops. It allows declaration of constants and variables, procedures and functions, types and variable of those types and triggers. It can support Array and handle exceptions (runtime errors).
+<BR>
+PL/SQL is not case sensitive so you are free to use lower case letters or upper case letters except within string and character literals.
+<br>
+The PL/SQL is known for its combination of data manipulating power of SQL with data processing power of procedural languages. It inherits the robustness, security, and portability of the Oracle Database.
+<br>
+Where to execute ?
+<br><br>
+To run and write PL/SQL Procedures you can use livesql by Oracle, visit <span>livesql.oracle.com</span>
+<br>
+<br>
+<h2>Constants in PL/SQL</h2>
+<p class="define_content">A constant is a value used in a PL/SQL block that remains unchanged throughout the program. It is a user-defined literal value. It can be declared and used instead of actual values.</p>
+  <br>    <span><b><i>constant_name CONSTANT datatype := VALUE; </i></b></span> <br><br>
+  <h2><span>Syntax : </span></h2>
+  <p class="define_content">
+    DECLARE  <br>
+    -- constant declaration  <br>
+    pi constant number := 3.141592654;<br>  
+    -- other declarations  <br>
+    radius number(5,2);   <br>
+    dia number(5,2);   <br>
+    circumference number(7, 2);  <br>
+    area number (10, 2);  <br>
+ BEGIN   <br>
+    -- processing  <br>
+    radius := 9.5;   <br>
+    dia := radius * 2;   <br>
+    circumference := 2.0 * pi * radius;  <br>
+    area := pi * radius * radius;  <br>
+    -- output  <br>
+    dbms_output.put_line('Radius: ' || radius);  <br>
+    dbms_output.put_line('Diameter: ' || dia);  <br>
+    dbms_output.put_line('Circumference: ' || circumference); <br> 
+    dbms_output.put_line('Area: ' || area);  <br>
+ END;  <br>
+  </p>
+  <br><br>
+  <h2>Example : </h2>
+  <p class="define_content">
+    <img src="../query_images/constants.PNG" alt="">
+    <br>
+    <br>
+  </p>
+</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
