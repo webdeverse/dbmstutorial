@@ -10,7 +10,7 @@
       href="https://use.fontawesome.com/releases/v5.12.1/css/all.css"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="../css/css_for_dnms_tutorial3.css" />
+    <link rel="stylesheet" href="../css/css_for_dnms_tutorial5.css" />
   </head>
   <body>
     <div class="banner">
@@ -129,7 +129,7 @@
         </li>
         <li>
           <p class="topic">
-            <a href="../dbmstutorial/whatisdbms.html" class="for_content" style="color: orange; border-bottom: 2px solid orange">PL/SQL
+            <a href="../dbmstutorial/whatisdbms.html" class="for_content">PL/SQL
                 </a
             >
             
@@ -155,6 +155,47 @@
           <img src="../images/dbmsarchitecture.png" alt="">
         </div>
         <br><br><br><br>
+        <H2>Objective of The Three Level Architecture</H2>
+ <p class="define_content">
+The objective of the three level architecture is to separate each user's view of the database from the Way the databse is physically represented. There are several reasons why this separation is desirable : 
+<br>
+<ul>
+ <br> <li>Each user should be able to access the same data, but have a different customized view of the data. Each user should be able to change the way he or she views the data, and this change should not affect other users.</li>
+ <br> <li>Users should not have deal directly with physical database storage details, such as indexing or hashing. In other words a user's interaction with teh datbase should be independent of storage considerations.</li>
+<br>  <li>The Database Administrator (DBA) should be able to change the database storage structures without affecting the user's views.</li>
+<br>  <li>The internal stucture of the database should be unaffected by changes to teh physical aspects of storage, such as the changeover to a  new storage device.</li>
+</ul>
+<BR></BR>
+ <span> <h2>EXTERNAL LEVEL OR VIEW LEVEL (EXTERNAL SCHEMA) </h2><br></span>
+<b>It is the users' view of the database. This level describes the part of the database that is relevant to each user. External level is the one which is closest to the end users. This level deals with the way in which individual users view data. Individual users are given different views according to the user's requirement. <br>
+A view involves only those portions of a database which are of concern to a user. Therefore same datbase can have different views for different users. External level is also known as view level. In addition different views may have different representation of the same data. For example, one user may view dates in the form ( date, month, year) while another may view dates as (year, month, day).</b>
+<br><br><br>
+<span><h2>CONCEPTUAL LEVEL OR LOGICAL LEVEL (CONCEPTUAL SCHEMA)</h2><br></span>
+<b>It is community view of the database. This level describes what data is stored in the database and the relationships among the data. The middle level in the three level architecture is teh conceptual level. This level contains the logical structure of the entire database as seen by the DBA. It is a complete view of the data requirements of the organization that is independent of any storage considerations. The conceptual level represents : 
+ <br><br>
+  <ul>
+    <li>All entities, their attributes, and their relationips;
+      <br>
+      An Entity is an object whose information is stored in the database. For example, in student database the entity is student. An attribute is a characteristic of interest about an entity.
+    </li>
+    <li>The constraints on the data.</li>
+    <li>Semantic information about the data.</li>
+    <li>Security and integrity information.</li>
+  </ul>
+</b>
+<br><br><br>
+<span>
+  <h2>INTERNAL LEVEL OR STORAGE LEVEL (pHYSICAL SCHEMA)</h2>
+</span>
+<b>It is the physical representation of the database on teh computer. This level describes how the data is stored in the database. The internal level is the one that concerns the way the data are physically stored on the hardware. The internal level covers the physical implementation of the database to achieve optimal runtime performance and storage space utilization. It covers the data structures and file organizations used to store data on storage devices. It interfaces with the operating system access methods to place the data on the storage devices, build the indexes retrieve the data, and so on.
+  <ul>
+    <li>Storage space allocation for data and indexes.</li>
+    <li>Record descriptions for storage ( with stored sizes for data items ).</li>
+    <li>Record placement.</li>
+    <li>Data compression and data encryption techniques.</li>
+  </ul>
+</b>
+ </p>
       </div>
       <button class="next"><a href="" class="page">NEXT</a></button>
     </div>

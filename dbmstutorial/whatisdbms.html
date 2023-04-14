@@ -10,7 +10,7 @@
       href="https://use.fontawesome.com/releases/v5.12.1/css/all.css"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="../css/css_for_dnms_tutorial3.css" />
+    <link rel="stylesheet" href="../css/css_for_dnms_tutorial5.css" />
   </head>
   <body>
     <div class="banner">
@@ -220,6 +220,39 @@
         <img src="../images/data.png" alt="" height="40%" width="40%" style="border-right:2px solid black;padding-right: 8%;">
         <img src="../images/information.png" alt="" height="60%" width="50%" style="margin-left:2%;">
       </div><br><br>
+      <h2>SCHEMA & INSTANCE</h2><br><b></b>
+      <p class="define_content">
+        The plan or scheme of the database is known as Schema. Schema gives the names of the entities and attributes. It specifies the relationship among them. It is a framework into which the values of the data items (or fields) are fitted. The plans or format of schema remains the same. Bur the values fitted into this format changes from instance to instace. Schema includes the definition of teh database name, the record type and the components that make up those records.
+        </p>
+        <p class="define_content">
+          INSTANCE is generally refered as the data present in the database at any particular point of time also called database instance.
+          Therefore, many database instances can correspond to the same database schema. The schema is sometimes called the intension of the database, while an instance is called an extension (or state) of the database.
+        </p>
+        <h2>File System V/S DBMS</h2>
+        <br><img src="../query_images/filevsdbms.PNG" alt="">
+        <br><img src="../query_images/filevsdbms2.PNG" alt="">
+        <br><br>
+        <h2>Advantages of DBMS</h2>
+        <br>
+        <p class="define_content">
+         <b><ul>
+            <li><span>Data redundancy and inconsistency</span>: Redundancy is the concept of repetition of data i.e. each data may have more than a single copy. The file system cannot control the redundancy of data as each user defines and maintains the needed files for a specific application to run. There may be a possibility that two users are maintaining the data of the same file for different applications. Hence changes made by one user do not reflect in files used by second users, which leads to inconsistency of data. Whereas DBMS controls redundancy by maintaining a single repository of data that is defined once and is accessed by many users. As there is no or less redundancy, data remains consistent.</li>
+            <li><span>Data concurrency</span>: Concurrent access to data means more than one user is accessing the same data at the same time. Anomalies occur when changes made by one user get lost because of changes made by another user. The file system does not provide any procedure to stop anomalies. Whereas DBMS provides a locking system to stop anomalies to occur</li>
+            <li><span>Data integrity</span>: There may be cases when some constraints need to be applied to the data before inserting it into the database. The file system does not provide any procedure to check these constraints automatically. Whereas DBMS maintains data integrity by enforcing user-defined constraints on data by itself.</li>
+            <li><span>Data security</span>: A file system provides a password mechanism to protect the database but how long can the password be protected? No one can guarantee that. This doesn’t happen in the case of DBMS. DBMS has specialized features that help provide shielding to its data.</li>
+            <li><span>Data sharing</span>: The file system does not allow sharing of data or sharing is too complex. Whereas in DBMS, data can be shared easily due to a centralized system</li>
+          </ul></b>
+        </p><br><br>
+<h2>Disadvantages of DBMS</h2><br>
+<b><ul>
+  <li><span>Complex design</span> : 
+
+    Database design is complex, difficult and time consuming. </li>
+  <li><span>Cost of Staff Training</span> – 
+    Educated staff (database administrator, application programmers, data entry operations) who maintains the database management system also requires a good amount. We need the database system designers to be hired along with application programmers. Alternatively, the services of some software houses need to be taken. So there is a lot of money which needs to be spent on developing software.</li>
+  <li><span>Performance</span> : 
+    The traditional file system is written for small organizations and for some specific applications due to which performance is generally very good. But for the small-scale firms, DBMS does not give a good performance as its speed is very slow. As a result, some applications will not run as fast as they could. Hence it is not good to use DBMS for small firms. Because performance is a factor that is overlooked by everyone. If performance is good then everyone (developers, designers, end-users) will use it easily and it will be user-friendly too. As the speed of the system totally depends on the performance so performance needs to be good.</li>
+</ul></b>
       <div class="btn">
         <button class="next"><a href="../dbmstutorial/dbmsarchitecture.html" class="page">NEXT</a></button>
       </div>
