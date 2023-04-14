@@ -10,7 +10,8 @@
       href="https://use.fontawesome.com/releases/v5.12.1/css/all.css"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="../css/css_for_dnms_tutorial3.css" />
+    <link rel="stylesheet" href="../css/css_for_dnms_tutorial5.css" />
+
   </head>
   <body>
     <div class="banner">
@@ -122,21 +123,31 @@
               
             </p>
             <ul style="list-style:decimal;">
-                <li><b><a href="#mysqlintroduction">MYSQL INTRODUCTION</a></b></li>
-                <li><b><a href="#mysqlcreatecomman">MySQL Create Command</a></b></li>
-                <li><b><a href="#mysqlselectcomman">MySQL Select Command</a></b></li>
-                <li><b><a href="#mysqlconstraints">MySQL Constraints</a></b></li>
-                <li><b><a href="#mysqlwhereclause">MySQL Where Clause</a></b></li>
-                <li><b><a href="#mysqldistinct">MySQL Distinct Clause</a></b></li>
+                <li><b><a href="../mysql/mysql1.html#mysqlintroduction">MYSQL INTRODUCTION</a></b></li>
+                <li><b><a href="../mysql/mysql1.html#mysqlcreatecomman">MySQL Create Command</a></b></li>
+                <li><b><a href="../mysql/mysql1.html#mysqlselectcomman">MySQL Select Command</a></b></li>
+                <li><b><a href="../mysql/mysql1.html#mysqlconstraints">MySQL Constraints</a></b></li>
+                <li><b><a href="../mysql/mysql1.html#mysqlwhereclause">MySQL Where Clause</a></b></li>
+                <li><b><a href="../mysql/mysql1.html#mysqldistinct">MySQL Distinct Clause</a></b></li>
             </ul>
           </li>
           <li>
             <p class="topic">
-              <a href="../dbmstutorial/whatisdbms.html" class="for_content" style="color: orange; border-bottom: 2px solid orange">PL/SQL
+              <a href="../plsql/plsql1.html" class="for_content" style="color: orange; border-bottom: 2px solid orange">PL/SQL
                   </a
               >
               
             </p>
+            <ul style="list-style:decimal;">
+              <li><b><a href="#variables">PL/SQL variables</a></b></li>
+              <li><b><a href="#constants">PL/SQL Constants</a></b></li>
+              <li><b><a href="#conditions">Conditional Statements in PL/SQL</a></b></li>
+              <li><b><a href="#iteratives">Iterative Statements in PL/SQL</a></b></li>
+              <li><b><a href="#cursors">PL/SQL Cursors</a></b></li>
+              <li><b><a href="#procedures">Procedures in PL/SQL</a></b></li>
+              <li><b><a href="#functions">Funtions in PL/SQL</a></b></li>
+              <li><b><a href="#triggers">Triggers in PL/SQL</a></b></li>
+          </ul>
           </li>
         </ul>
         
@@ -155,10 +166,45 @@ The PL/SQL is known for its combination of data manipulating power of SQL with d
 <br>
 Where to execute ?
 <br><br>
-To run and write PL/SQL Procedures you can use livesql by Oracle, visit <span>livesql.oracle.com</span>
+To run and write PL/SQL Procedures you can use livesql by Oracle, visit <span><a href="https://livesql.oracle.com/">livesql.oracle.com</a></span>
 <br>
 <br>
-<h2>Constants in PL/SQL</h2>
+<h2><a name="variables">Variables in PL/SQL</a></h2>
+<p class="define_content"> Variables store the values thta can change through the PL/SQL Block. Within the Execution section or Exception section, we may perform some operations on these variables leading to the change in their values.</p>
+<br>
+<h2><span>Syntax : </span></h2>
+<p class="define_content">
+  <span><i>vairable_name datatype [NOT NULL := value];</i></span>
+  <br>
+  When a variable is specified as NOT NULL , we must intialize the variable when it is declared.
+  <br><br>
+  <h2><span>Example : </span></h2>
+  <br>
+  <span><i><b> DECLARE <br>
+    Marks number (6); <br>
+    College varchar 2(10) NOT NULL:= "PGGC-11";
+  </b></i></span>  
+</p>
+<p class="define_content">
+  1. We can assign values to variables directly from the database comumns by using a SELECT INTO statement.
+  <br><br>
+  <h2><span>Syntax : </span></h2>
+  <br><b><i><span>SELECT column_name INTO variable_name FROM table_name [ WHERE condition ];</span></i></b>
+  <br><br>
+  <h2><span>Example : </span></h2>
+  <img src="../query_images/variable.png" alt="">
+</p>
+<br><br>
+<h3>Scope of Variables</h3>
+<br>
+<p class="define_content">P:/SQL allows the nesting of Blocks within Blocks i.e., the Execution section of an outer block can contain inner blocks. Therefore, a variable which is accessible to an outer Block is also accessible to all nested inner Blocks. The variables declared in the iner blocks are not accessible to outer blocks. Based on their declaration we can classify variables into two types.
+<ul>
+  <b><li><span>Local variables  </span>: Variables declared in a inner block cannot be referenced by outside Blocks. These cariables are known as Local Variables</li></b>
+  <b><li><span>Global variables </span>: Variable declared in a outer block can be referenced by its itself and by its inner blocks. These variables are known as Global variables.</li></b>
+</ul>
+  <p>
+    <BR></BR>
+<h2><a name="constants">Constants in PL/SQL</a></h2>
 <p class="define_content">A constant is a value used in a PL/SQL block that remains unchanged throughout the program. It is a user-defined literal value. It can be declared and used instead of actual values.</p>
   <br>    <span><b><i>constant_name CONSTANT datatype := VALUE; </i></b></span> <br><br>
   <h2><span>Syntax : </span></h2>
@@ -185,14 +231,275 @@ To run and write PL/SQL Procedures you can use livesql by Oracle, visit <span>li
  END;  <br>
   </p>
   <br><br>
-  <h2>Example : </h2>
+  <h2><span>Example : </span></h2>
   <p class="define_content">
     <img src="../query_images/constants.PNG" alt="">
     <br>
     <br>
   </p>
 </p>
-        </div>
+<h2><a name="conditions">Conditional and Iterative Statements in PL/SQL</a></h2>
+<p class="define_content">
+  PL/SQL supports programming language features like conditional statements, iterative statements in the similar way as other programming languages like Java and C++ .
+ <br> <br> <h3><span>Conditional Statement : IF THEN ELSE STATEMENT</span></h3>
+  <p class="define_content">
+    First, we will study the syntax of how to use conditional statements in PL/SQL programming.
+    <br><br>
+    <span>IF THEN ELSE STATEMENT</span>
+    <br>
+    1. <I>IF-ELSE</I>
+        <br>
+    <span>IF (condition) <br>
+    THEN 
+    --Statement 1; <br>
+    --Statement 2; <br>
+    . <br>
+    . <br>
+    ELSE <br>
+    --Statement 1; <br>
+    --Statement 2; <br>
+    . <br>
+    . <br>
+    END IF;
+<BR>
+</span><br>
+<H3>Example : </H3>
+<img src="../query_images/ifelse.PNG" alt="">
+  </p>
+  <br>
+  <br>
+ <b>2. <I>IF-ELSEIF-ELSE</I>
+  <br>
+<span>IF (condition) <br>
+THEN 
+--Statement 1; <br>
+--Statement 2; <br>
+. <br>
+. <br>
+ELSIF (condition) <br>
+--Statement 1; <br>
+--Statement 2; <br>
+. <br>
+. <br>
+ELSE
+--Statement 1;
+<br>--Statement2;
+<br>.
+<br>. 
+END IF;
+<BR>
+</span></b>
+<br>
+<H3>Example : </H3>
+<br>
+<img src="../query_images/ifelseif.PNG" alt="">
+</p>
+  <img src="" alt="">
+</p>       
+<h2><a name="iteratives">ITERATIVE STATEMENTS</a></h2>
+<p class="define_content">
+  Iterative statements are used when we want to repeat the execution of one or more statements for specified number of times.
+ <br> <br>There are three types of loops in PL/SQL : 
+ <b><ul>
+    <li>Simple Loop</li>
+    <li>While Loop</li>
+    <li>For Loop</li>
+  </ul></b>
+  <br> <br> 
+  <h3>Simple Loop</h3>
+  <p class="define_content">
+    A Simple Loop is used when a set of statements is to be execute <span>at least once</span> before the loop terminates. The important part her is 'at least once'. An <span>EXIT</span> condition must be specified in the loop, otherwise the loop will get into an infinite number of iterations. When the EXIT condition is satisfied the process exits from the loop. The conditioon is implied not on when these statements are to be executed but when we should stop executing these statements.
+  <br>  <br>
+  IMPORTANT POINTS ABOUT SIMPLE LOOPS : 
+  <ol>
+    <li>Initialize a variable before the loop body.</li>
+    <li>Increment the variable in the  loop . </li>
+    <li>Use a <span>EXIT WHEN </span>statement to exit from teh loop. If you use a EXIT statement without WHEN condition, the statements in the loop are to be executed only <span>once</span>.</li>
+  </ol>
+  <br><br><h3><span>Example : </span></h3><br>
+  <img src="../query_images/simpleloop.PNG" alt="">
+  </p>
+  <br><br>
+  <h3>While Loop</h3>
+  <p class="define_content">
+    A WHILE LOOP is used when a set of statements has to be executedas long as a condition is true.
+    The condition is evaluated at the beginning of each iteration. The iteration continues until the condition becomes false. This will exxecute the statements inside the loop only when and until when condition is true.
+    <br>  <br>
+  IMPORTANT POINTS ABOUT WHILE LOOPS : 
+  <ol>
+    <li>Initialize a variable before the loop body.</li>
+    <li>Increment the variable in the  loop . </li>
+    <li>Use the variable value after the loop body.</li>
+  </ol>
+  <br> <br>
+  <span><b>A while loop is used when we know the terminating condition but are not aware how many times exactly we need to execute the statements. </b></span>
+  <br><br><h3><span>Example : </span></h3><br>
+  <img src="../query_images/whileloop.PNG" alt="">
+  </p>
+  <br><br>
+  <h3>FOR Loop</h3>
+  <p class="define_content">
+    A FOR LOOP is used to execute a set of statements for a predetermined number of times. <br>
+    Iteration occurs between the start <span>( val1 )</span> and end <span>( val2 )</span> integer values given. The counter is always incremented by 1. The loop exits when the counter reaches the value of the end integer.
+<br><br>
+  IMPORTANT POINTS ABOUT FOR LOOPS : 
+  <ol>
+    <li>The counter variable is implicitly declared in the declaration section, so it's not necessary to declare it explicitly.</li>
+    <li>The counter variable is incremented by 1 and does not need to be incremented explicitly.</li>
+  </ol><br><h3><span>Example : </span></h3><br>
+  <img src="../query_images/forloop.PNG" alt="">
+  </p> <br> <br>
+</p>
+  <h1><a name="cursors">PL/SQL Cursors</a></h1>
+  <p class="define_content">
+    A <span>Cursor</span> is a temporary work area created in the system memory when a SQL statement is executed. This temporary work area is used to store the data retrieved from the database, and manipulate this data. A cursor can process only one row at a time, although it can hold multiple rows at one time. 
+    The set of rows the cursor holds is called the <i>active set.</i>
+    <br>
+    <br>There are basically two types of cursors in PL/SQL :
+    <ol>
+      <b>
+        <li>IMPLICIT cursors</li>
+        <li>EXPLICIT cursors</li>
+      </b>
+    </ol>
+    <br><br>
+    <h2><span>IMPLICIT CURSORS : </span></h2>
+    <p class="define_content">
+      PL/SQL employs an implicit cursor for each UPDATE, DELETE, or INSERT statement we execute in a program. We cannot execute these statements within and explicit cursor, even if we want to. The only choice we have is between using an implicit or explicit cursor only when you execute a single-row SELECT statement ( a SELECT that returns only one row ). <br>
+      In teh following UPDATE statement, which gives every student in the institute a+5 grace marks; <br> 
+      PL/SQL creates an implicit cursor to identify the set of rows in the table would be affected by the update : 
+      <br><br>
+      <span><i>UPDATE student SET marks=marks + 5 ;
+      </i></span>
+      Any single-row select query will also behave in the similar way: 
+      <i><span>SELECT sum(marks) FROM student ;</span></i>
+      <br><br>
+      If we have a SELECT statement thta returns more than one row, we will have to use an explicit cursor for that query and then process the rows returned one at a time. PL/SQL does not yet support any kind of array interface between a databse table and a composite PL/SQL datatype such as a PL/SQL table.
+  <br>Oracle provides few attributes called as implicit cursor attributes to check the status of DML operation. The cursor  attributes are <span>%FOUND, %NOTFOUND, %ROWCOUNT</span> and<span> %IS OPEN</span>. <br><br>
+ <h3><span>EXAMPLE : </span></h3>
+ <img src="../query_images/implicitcursor.PNG" alt="">
+    </p>
+    <br><br>
+    <h2><span>EXPLICIT CURSORS</span></h2>
+    <p class="define_content">
+      An Explicit cursor is a SELECT statement that is explicitly defined in the declaration section of your code and, in the process, assigned a name. There is no such thing as an explicit cursor for UPDATE, DELETE and INSERT statements.
+      <br><br>
+      With explicit cursors, you have complete control over how to access information in the database. You decide when to OPEN  the cursor, when to FETCH records from the cursor ( and therefore from the table or tables in the SELECT statement of the cursor ) how many records to fetch, and when to CLOSE the cursor. Information about the current state of your cursor is available through examination of the cursor attributes. This granularity of control makes the explicit cursor an invaluable tool for your development effort. <br><br>
+      An explicit cursor is defined in the declaration section of the PL/SQL Block. It is created on a SELECT statement which returns more than one row. We can provide a suitable name for the cursor.
+      <br><br>
+      <h3><span>Syntax to declare an explicit cursor</span></h3>
+      <br><br>
+      <span><i> <b> CURSOR cursor_name IS select_statement ; </b></i></span> <br><br>
+      <h3>Steps to use Explicit Cursors : </h3><br>
+      <ol>
+        <li>1. <span>DECLARE</span> : The cursor is declared with the variables and constants in the declaration section.</li>
+        <li>2. <span>OPEN</span> : This done in the Execution section.</li>
+        <li>3. <span>FETCH</span> : The data from cursor is fetches into PL/SQL variables, again ini the Execution section.</li>
+        <li>4. <span>CLOSE</span> : The last thing done with the cursor in the Execution section is to close it.</li>
+      </ol>
+      <br>
+      <h3>Syntax to access an explicit cursor</h3><br>
+      OPEN A CURSOR : <BR>
+       <b> <span>OPEN cursor_name ; </span><br>
+        FETCH RECORDS FROM A CURSOR : <br>
+        <span>FETCH cursor_name INTO variable_name ; </span> <br>
+        CLOSE A CURSOR : <br>
+        <span>CLOSE cursor_name ; </span></b>
+        <br><br>
+        <h4>The cursor  attributes are <span>%FOUND, %NOTFOUND, %ROWCOUNT</span> and<span> %IS OPEN</span>.</h4>
+    </p>
+
+  </p>
+  </p><br><br>
+  <h1><a name="procedures">Procedures in PL/SQL</a></h1>
+  <p class="define_content">
+    Procedures in PL/SQL are similar to a procedure in othere programming languages. Every procedure has a header and a body. The header consists of the name of the procedure and the parameters or variables passed to the procedure. The body consists of declaration section, execution section and exception section similar to a general PL/SQL Block. A procedure is similar to an anonymous Pl/SQL Block but it is named for repeated usage. <br><br>
+    Procedures don't normally return a value, but may have some outside effects ( like updating tables ). Procedures may return a value in the form of OUT parameter, described later in this section. <br><br>
+    The general format of a procedure is : 
+    <br><br> 
+    <span><i>CREATE [ OR REPLACE ] PROCEDURE procedure_name [ list of paramteres ] 
+      <br> IS 
+      <br>[ declaration_section ]
+      <br> BEGIN
+      <br> --Execution section
+      <br> EXCEPTION
+      <br> --Exeption section
+      <br>END;
+      </i></span>
+    <br><br> 
+    <h3>EXAMPLE : </h3><BR></BR>
+    <img src="../query_images/procedurecreate.PNG" alt="">
+    <br><br>
+    <img src="../query_images/procedureoutput.PNG" alt="">
+    <br><br>
+  <p class="define_content">
+    We can pass parameters to procedures in three ways. 
+    <b>
+      <ol>
+        <li><span>IN-parameters : </span>A parameter that needs to be supplied to the procedure and may or may not be used in the procedure.
+        <br> <span><i>CREATE [ OR REPLACE ] PROCEDURE procedure_name ( param1 IN datatype, param2 IN datatype, ...)</i></span></li>
+        <br><li><span> OUT-paramerters : </span>A parameter that is after the procedure execution. This is how we can make procedure return a value.
+        <br> <span><i>CREATE [ OR REPLACE ] PROCEDURE procedure_name ( param_name OUT datatype, param_name OUT datatype, ...)</i></span> </li>
+        <br><li><span>IN OUT-parameters : </span>The paramter that serves both the purposes : IN and OUT.
+        <br><span><i>CREATE [ OR REPLACE ] PROCEDURE procedure_name ( param_name IN OUT datatype)</i></span></li>
+      </ol>
+    </b>
+  </p>
+  <br><br>
+  <h1><a name="functions">Functions in PL/SQL</a></h1>
+  <p class="define_content">
+    A function is another named PL/SQL Block which is similar to a procedure. The major difference between the both being, a function must always return a value, but a procedure may or may not return a value.
+  <br><br>  <h3>SYNTAX : </h3><br>
+    <b><span><i>CREATE [OR REPLACE] FUNCTION function_name [parameters]
+      <br>RETURN return datatype;
+      <BR> IS 
+        <br>--declaration section
+        <br>BEGIN
+        <br>--Execution section;
+        <br>Return return_variable;
+        <br>EXCEPTION 
+        <br>--Exeption section;
+        <br>Return return_variable;
+        <br>END;
+    </i></span><br><br>
+    1. <span>Return Type :</span> The return datatype can be any of the oracle datatype like varchar, number, etc. <br>
+    2. The execution and exception section both should return a value which is of the datatype defined in the header section.
+  </b>
+  <br><br>
+  <p class="define_content">
+    HOW TO EXECUTE A PL/SQL FUNTION ? 
+    <br> <span>SELECT function_name FROM dual ; </span>
+    <br>OR
+    <br><span>dbms_output.put_line( function_name )</span>
+  </p>
+</p>
+  </p>
+  <br> <br>
+  <h1><a name="triggers">Triggers in PL/SQL</a></h1>
+  <p class="define_content">
+    A trigger is a pl/sql block structure which is fired when a DML statments like Insert, Delete, Update is executed on a database table. A trigger, as teh name suggests, is tiggered automatically when an associated DML ( fro which the Trigger is defined ) is executed.
+    <br> <br>
+    <h2>SYNTAX : </h2>
+   <span>CREATE [OR REPLACE] TRIGGER trigger_name { BEFORE | AFTER | INSTEAD OF } <br>
+    { INSERT [ OR ] | UPDATE [OR] | DELETE }
+    <br> [ OF col_name ];
+    <br> ON table_name [ FOR EACH ROW ] WHEN (condition)
+    <br> BEGIN
+    <br>--Statements
+    <br>END;
+</span>
+      <br><br>
+      <h2>EXAMPLE : </h2>
+      <br><img src="../query_images/triggers.PNG" alt="">
+      <br><br><h3>Types of Triggers : </h3><br>
+      <b><ol>
+        <li><span>Row level Trigger</span> : This trigger should be fired at each row on which the specified operation ( INSERT,UPDATE, DELETE) took place. Trigger should be fired for each individual row. 
+  For example, if an Update statement updated 4 different rows tehn trigger should be fired 4 times, once for each row.</li><br>
+        <li><span>Statement level Trigger</span> : This trigger is fired on the complete statement and not on the individual rows. Taking the same example : Even if an UPDATE statement modified 4 rows, the trigger will be fired once for the complete statement.</li>
+      </ol></b>
+  </p>
+
+</div>
       </div>
     </div>
   </body>
